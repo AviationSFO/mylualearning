@@ -1,8 +1,9 @@
--- To Do List By Steven Weinstein on 1-6-2022
+-- To Do List By Steven Weinstein on 1-7-2022
 -- Run command: lua ~/Desktop/mylualearning/ToDoList/main.lua
 go = true
+-- contents = {}
 file = io.open("list.txt", "r+")
-print('To Do List by Steven Weinstein Version Beta 0.1\nPress return to start')
+print('To Do List by Steven Weinstein Version Beta 0.1.1\nPress return to start')
 io.read()
 function main ()
     print("Enter one of the numbers below coresponding to their option\nOptions:\n1 - Read your list\n2 - Append to your list\n3 - Clear your list\n4 - Save and quit")
@@ -33,6 +34,7 @@ function main ()
         print("Quiting...")
     end
 end
-while go == true do
+
+while go == true do 
     main()
 end
