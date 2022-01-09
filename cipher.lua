@@ -1,18 +1,35 @@
--- Encryption program by Steven Weinstein on 1-7-2022
+-- Encryption program by Steven Weinstein on 1-8-2022
 -- Run command: lua ~/Desktop/mylualearning/cipher.lua
-print('Encryption and Decryption program by Steven Weinstein Version Beta 0.1\nPress return to start')
+print('Encryption and Decryption program by Steven Weinstein Version Beta 0.2\nPress return to start')
 io.read()
 function strToBytes(str) -- encode
     local bytes = { str:byte(1, -1)}
     for i = 1, #bytes do
-        bytes[i] = bytes[i] + 100
+        bytes[i] = bytes[i] + 3
     end
-    return table.concat(bytes, ',')
+    -- retun table.concat(bytes, ',')
+    table = table.concat(bytes, ',')
+    local function gsub(c)return string.char(c) end
+    return table:gsub('(%d+),?', gsub)
     end
 function bytesToStr(str) -- decode
-    local function gsub(c)return string.char(c - 100) end
-    return str:gsub('(%d+),?', gsub)
-end
+    local bytes = { str:byte(1, -1)}
+    for i = 1, #bytes do
+        bytes[i] = bytes[i] - 3
+    end
+    -- retun table.concat(bytes, ',')
+    table = table.concat(bytes, ',')
+    local function gsub(c)return string.char(c) end
+    return table:gsub('(%d+),?', gsub)
+    end
+
+    --     local function gsub(c)
+--         string = { str:byte(1, -1)}
+--         print(string)
+--         return string.char(c - 3) 
+--     end
+--     return str:gsub('(%d+),?', gsub)
+-- end
 function cipher ()
     print("What would you like to cipher: ")
     local text = io.read()
