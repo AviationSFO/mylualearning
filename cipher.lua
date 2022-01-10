@@ -8,7 +8,7 @@ function strToBytes(str) -- encode
         bytes[i] = bytes[i] + 3
     end
     table = table.concat(bytes, ',')
-    local function gsub(c)return string.char(c) end
+    local function gsub(c) return string.char(c) end
     return table:gsub('(%d+),?', gsub)
     end
 function bytesToStr(str) -- decode
@@ -17,9 +17,9 @@ function bytesToStr(str) -- decode
         bytes[i] = bytes[i] - 3
     end
     table = table.concat(bytes, ',')
-    local function gsub(c)return string.char(c) end
+    local function gsub(c) return string.char(c) end
     return table:gsub('(%d+),?', gsub)
-    end
+end
 
 function cipher ()
     io.write("What would you like to cipher: ")

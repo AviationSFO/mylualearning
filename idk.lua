@@ -1,12 +1,11 @@
 -- what to make lol
 local idk = 0
-while(idk < 6969)
-do
-    print("ur mum gae")
-    if (idk >= 6969)
-    then
+while true do
+    if idk < 6969 then
+        print("ur mum gae")
+        idk = idk + 1
+    elseif idk == 6969 then
+        -- os.execute("cd ~/Desktop; mkdir urmum")
         break
-    else
-        idk = idk+1
     end
 end
