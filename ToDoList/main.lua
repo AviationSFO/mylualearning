@@ -1,4 +1,4 @@
--- To Do List By Steven Weinstein on 1-7-2022
+-- To Do List By Steven Weinstein on 1-13-2022
 -- Run command: lua ~/Desktop/mylualearning/ToDoList/main.lua
 go = true
 -- contents = {}
@@ -14,12 +14,16 @@ function main ()
         if contents == nil or contents == "" then
             contents = "Empty"
         end
+        os.execute("clear")
         print("Your list is:" .. "\n" .. contents)
         file:close()
     elseif option == "2" then
         file = io.open("list.txt", "a")
+        os.execute("clear")
         print("What would you like to add:")
         local append = io.read()
+        os.execute("clear")
+        print(append .. " has been added to your file!")
         local append = append .. "\n"
         file:write(append)
         local append = nil
